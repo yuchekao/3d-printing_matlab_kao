@@ -51,6 +51,7 @@ delta_Rp = G * t_step;
 % Rp: Current radius of one particle (crystal)
 % Nucleation time (tn) is the page number i.e. Rp(D, t, tn) is the radius
 % of one particle in section D, at time t, nucleated at time tn.
+% in line 52, it should be Rp(t, D, tn), right?? not Rp(D, t, tn) 
 Rp = zeros(n_tsteps, n_sections, n_tsteps);
 for tn = 1:n_tsteps
     Rp(tn:end, :, tn) = cumsum(delta_Rp(tn:end, :), 1, 'omitnan');
